@@ -1,5 +1,9 @@
-require(['jquery'], function($) {
 
+require(['jquery'], function($) {
+    // hack to fix the the missing jquery plugin starts here
+    // jquery plugin code pasted into this plugin from the turnitintooltwo
+    $.getScript(M.cfg.wwwroot + '/mod/turnitintooltwo/jquery/jquery.tooltipster.js', function(){});
+    // hack ends here
     $(document).on('mouseover', '.tii_links_container .tii_tooltip', function() {
         $(this).tooltipster({ multiple: true });
         return false;
